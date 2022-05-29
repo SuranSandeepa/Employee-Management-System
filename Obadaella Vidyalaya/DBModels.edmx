@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Obadaella_VidyalayaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Employee_Attendance">
+          <Key>
+            <PropertyRef Name="ATTENDID" />
+          </Key>
+          <Property Name="ATTENDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPCODE" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPNAME" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="DESIGNATION" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="DATE" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Employee_Register">
+          <Key>
+            <PropertyRef Name="EMPCODE" />
+          </Key>
+          <Property Name="EMPNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPCODE" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPNAME" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPDESIGNATION" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPNIC" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPADDRESS" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPGENDER" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPDOB" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPCONTACT" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPEMAIL" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPDATE" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee_Tasks">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="TASKID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPCODE" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPLOYEENAME" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TASKNAME" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TASKDATE" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeSalaryDetails">
+          <Key>
+            <PropertyRef Name="EmpPayID" />
+          </Key>
+          <Property Name="EmpSalNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpPayID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeID" Type="varchar" MaxLength="50" />
+          <Property Name="Bank" Type="varchar" MaxLength="250" />
+          <Property Name="Branch" Type="varchar" MaxLength="250" />
+          <Property Name="Account" Type="varchar" MaxLength="50" />
+          <Property Name="Basic" Type="int" />
+          <Property Name="Allowances" Type="int" />
+          <Property Name="Loan" Type="int" />
+          <Property Name="TotalSalary" Type="int" />
+        </EntityType>
+        <EntityType Name="StudentPayment">
+          <Key>
+            <PropertyRef Name="StudentPayNo" />
+          </Key>
+          <Property Name="StudentPayNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentID" Type="varchar" MaxLength="50" />
+          <Property Name="StudentName" Type="varchar" MaxLength="250" />
+          <Property Name="StudentGrade" Type="varchar" MaxLength="50" />
+          <Property Name="ExamFee" Type="varchar" MaxLength="50" />
+          <Property Name="FacilityFee" Type="varchar" MaxLength="50" />
+          <Property Name="TotalFee" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Users_Table">
+          <Key>
+            <PropertyRef Name="EMPLOYEEID" />
+          </Key>
+          <Property Name="USERNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPLOYEEID" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Obadaella_VidyalayaModelStoreContainer">
+          <EntitySet Name="Employee_Attendance" EntityType="Self.Employee_Attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_Register" EntityType="Self.Employee_Register" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_Tasks" EntityType="Self.Employee_Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeSalaryDetails" EntityType="Self.EmployeeSalaryDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentPayment" EntityType="Self.StudentPayment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users_Table" EntityType="Self.Users_Table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Obadaella_VidyalayaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Obadaella_VidyalayaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employee_Tasks" EntityType="Obadaella_VidyalayaModel.Employee_Tasks" />
+          <EntitySet Name="EmployeeSalaryDetails" EntityType="Obadaella_VidyalayaModel.EmployeeSalaryDetail" />
+          <EntitySet Name="StudentPayments" EntityType="Obadaella_VidyalayaModel.StudentPayment" />
+          <EntitySet Name="Users_Table" EntityType="Obadaella_VidyalayaModel.Users_Table" />
+          <EntitySet Name="Employee_Register" EntityType="Obadaella_VidyalayaModel.Employee_Register" />
+          <EntitySet Name="Employee_Attendance" EntityType="Obadaella_VidyalayaModel.Employee_Attendance" />
+        </EntityContainer>
+        <EntityType Name="Employee_Tasks">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="TASKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPCODE" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMPLOYEENAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TASKNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TASKDATE" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="EmployeeSalaryDetail">
+          <Key>
+            <PropertyRef Name="EmpPayID" />
+          </Key>
+          <Property Name="EmpSalNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpPayID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bank" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Branch" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Basic" Type="Int32" />
+          <Property Name="Allowances" Type="Int32" />
+          <Property Name="Loan" Type="Int32" />
+          <Property Name="TotalSalary" Type="Int32" />
+        </EntityType>
+        <EntityType Name="StudentPayment">
+          <Key>
+            <PropertyRef Name="StudentPayNo" />
+          </Key>
+          <Property Name="StudentPayNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StudentName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="StudentGrade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExamFee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FacilityFee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalFee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Users_Table">
+          <Key>
+            <PropertyRef Name="EMPLOYEEID" />
+          </Key>
+          <Property Name="USERNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPLOYEEID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Employee_Register">
+          <Key>
+            <PropertyRef Name="EMPCODE" />
+          </Key>
+          <Property Name="EMPNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPCODE" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPDESIGNATION" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPNIC" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPADDRESS" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPGENDER" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPDOB" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPCONTACT" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPEMAIL" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPDATE" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Employee_Attendance">
+          <Key>
+            <PropertyRef Name="ATTENDID" />
+          </Key>
+          <Property Name="ATTENDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPCODE" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DESIGNATION" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Obadaella_VidyalayaModelStoreContainer" CdmEntityContainer="Obadaella_VidyalayaEntities">
+          <EntitySetMapping Name="Employee_Tasks">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Employee_Tasks">
+              <MappingFragment StoreEntitySet="Employee_Tasks">
+                <ScalarProperty Name="TASKDATE" ColumnName="TASKDATE" />
+                <ScalarProperty Name="TASKNAME" ColumnName="TASKNAME" />
+                <ScalarProperty Name="EMPLOYEENAME" ColumnName="EMPLOYEENAME" />
+                <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
+                <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeSalaryDetails">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.EmployeeSalaryDetail">
+              <MappingFragment StoreEntitySet="EmployeeSalaryDetails">
+                <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+                <ScalarProperty Name="Loan" ColumnName="Loan" />
+                <ScalarProperty Name="Allowances" ColumnName="Allowances" />
+                <ScalarProperty Name="Basic" ColumnName="Basic" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmpPayID" ColumnName="EmpPayID" />
+                <ScalarProperty Name="EmpSalNo" ColumnName="EmpSalNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentPayments">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.StudentPayment">
+              <MappingFragment StoreEntitySet="StudentPayment">
+                <ScalarProperty Name="TotalFee" ColumnName="TotalFee" />
+                <ScalarProperty Name="FacilityFee" ColumnName="FacilityFee" />
+                <ScalarProperty Name="ExamFee" ColumnName="ExamFee" />
+                <ScalarProperty Name="StudentGrade" ColumnName="StudentGrade" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentPayNo" ColumnName="StudentPayNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users_Table">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Users_Table">
+              <MappingFragment StoreEntitySet="Users_Table">
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+                <ScalarProperty Name="USERNO" ColumnName="USERNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Register">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Employee_Register">
+              <MappingFragment StoreEntitySet="Employee_Register">
+                <ScalarProperty Name="EMPDATE" ColumnName="EMPDATE" />
+                <ScalarProperty Name="EMPEMAIL" ColumnName="EMPEMAIL" />
+                <ScalarProperty Name="EMPCONTACT" ColumnName="EMPCONTACT" />
+                <ScalarProperty Name="EMPDOB" ColumnName="EMPDOB" />
+                <ScalarProperty Name="EMPGENDER" ColumnName="EMPGENDER" />
+                <ScalarProperty Name="EMPADDRESS" ColumnName="EMPADDRESS" />
+                <ScalarProperty Name="EMPNIC" ColumnName="EMPNIC" />
+                <ScalarProperty Name="EMPDESIGNATION" ColumnName="EMPDESIGNATION" />
+                <ScalarProperty Name="EMPNAME" ColumnName="EMPNAME" />
+                <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
+                <ScalarProperty Name="EMPNO" ColumnName="EMPNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Attendance">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Employee_Attendance">
+              <MappingFragment StoreEntitySet="Employee_Attendance">
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+                <ScalarProperty Name="EMPNAME" ColumnName="EMPNAME" />
+                <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
+                <ScalarProperty Name="ATTENDID" ColumnName="ATTENDID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
