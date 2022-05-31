@@ -16,7 +16,7 @@ namespace Obadaella_Vidyalaya
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PaymentHome());
+            Application.Run(new LoginPage());
         }
     }
 }

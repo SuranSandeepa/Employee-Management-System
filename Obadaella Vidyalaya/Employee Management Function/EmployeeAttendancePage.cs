@@ -71,7 +71,6 @@ namespace Obadaella_Vidyalaya
             AbsentRbtn.Checked = false;
             btnSaveAttendance.Text = "Save";
             btnDeleteAttendance.Enabled = false;
-
             modelA.ATTENDID = 0;
         }
 
@@ -84,7 +83,7 @@ namespace Obadaella_Vidyalaya
         //Save btn
         private void btnSaveAttendance_Click(object sender, EventArgs e)
         {
-            if(txtEmpCodeAttendance.Text == string.Empty || txtEmpNameAttendance.Text == string.Empty || txtEmpDesiAttendance.Text == string.Empty)
+            if(txtEmpCodeAttendance.Text == string.Empty || txtEmpNameAttendance.Text == string.Empty || txtEmpDesiAttendance.Text == string.Empty || (PresentRbtn.Checked == false && AbsentRbtn.Checked == false))
             {
                 MessageBox.Show("All Details Required!");
             }

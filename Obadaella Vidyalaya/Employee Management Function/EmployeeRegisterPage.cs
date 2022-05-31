@@ -88,7 +88,7 @@ namespace Obadaella_Vidyalaya
             try
             {
 
-                if (txtEmpCodeReg.Text == string.Empty || txtEmpNameReg.Text == string.Empty || txtNicReg.Text == string.Empty || txtAddressReg.Text == string.Empty || txtContactReg.Text == string.Empty || txtEmailReg.Text == string.Empty || txtDesignationReg.Text == string.Empty)
+                if (txtEmpCodeReg.Text == string.Empty || txtEmpNameReg.Text == string.Empty || txtNicReg.Text == string.Empty || txtAddressReg.Text == string.Empty || txtContactReg.Text == string.Empty || txtEmailReg.Text == string.Empty || txtDesignationReg.Text == string.Empty || (MaleRbtn.Checked == false && FemaleRbtn.Checked == false))
                 {
                     MessageBox.Show("All Details Reqired!");
                 }
@@ -193,7 +193,7 @@ namespace Obadaella_Vidyalaya
             }
             catch(Exception x)
             {
-                //MessageBox.Show("Can't Give Same EMPLOYEE CODE & Can't Change EMPLOYEE CODE!!" + x);
+               
             }
         }
 
@@ -333,29 +333,5 @@ namespace Obadaella_Vidyalaya
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-        //Insert Image and Browse Image 
-        /*
-        private void btnBrowseImage_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openedlg = new OpenFileDialog();
-
-            if (openedlg.ShowDialog() == DialogResult.OK)
-            {
-                Image img = Image.FromFile(openedlg.FileName);
-         
-
-            }
-        }*/
     }
 }
