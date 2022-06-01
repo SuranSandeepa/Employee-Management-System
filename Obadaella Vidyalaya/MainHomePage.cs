@@ -25,6 +25,7 @@ namespace Obadaella_Vidyalaya
             password = p;
         }
 
+        //Validate User
         void VisibleBtn()
         {
             try
@@ -60,6 +61,7 @@ namespace Obadaella_Vidyalaya
             VisibleBtn();
         }
         
+        //Employee Home
         private void EmployeeMainBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -67,6 +69,7 @@ namespace Obadaella_Vidyalaya
             obj.Show();
         }
 
+        //Log Out btn
         private void Logout_Click(object sender, EventArgs e)
         {
             username = "";
@@ -76,6 +79,7 @@ namespace Obadaella_Vidyalaya
             obj.Show();
         }
 
+        //Register Page
         private void btnLoginCredintialsMH_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -83,6 +87,7 @@ namespace Obadaella_Vidyalaya
             obj.Show();
         }
 
+        //Payment Home 
         private void PaymentMainBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
