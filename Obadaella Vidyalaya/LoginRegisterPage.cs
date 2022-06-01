@@ -136,7 +136,7 @@ namespace Obadaella_Vidyalaya
             }
             catch (Exception x)
             {
-                MessageBox.Show("එහෙම කරන්න බෑ ඉතින්" + x);
+                MessageBox.Show("ERROR in double clicking event" + x);
             }
         }
 
