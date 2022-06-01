@@ -29,7 +29,7 @@ namespace Obadaella_Vidyalaya
             username = s;
             password = p;
         }
-//-----------------------------------------------------------------------------------------------------
+
 //Navigation
         //Arrow Icon
         private void backArrowER_Click(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Obadaella_Vidyalaya
             EmployeesDetailsView empHome = new EmployeesDetailsView();
             empHome.Show();
         }
-//------------------------------------------------------------------------------------
+
 //CRUD
 
 //Cancel btn
@@ -229,7 +229,7 @@ namespace Obadaella_Vidyalaya
         }
 
 
- //Validation Parts------------------------------------------------------------------------------------------------------------------------------------------------ 
+ //Validation Part
 
         //Email Validation txtbox
         private void txtEmailReg_Leave(object sender, EventArgs e)
